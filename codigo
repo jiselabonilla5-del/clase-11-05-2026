@@ -1,0 +1,23 @@
+# Juego simple: Adivina el número
+import random
+
+numero_secreto = random.randint(1, 10)
+intentos = 3
+
+print("🎮 Bienvenido al juego")
+print("Adivina el número entre 1 y 10")
+
+while intentos > 0:
+    intento = int(input("Ingresa un número: "))
+
+    if intento == numero_secreto:
+        print("✅ ¡Correcto! Ganaste")
+        break
+    else:
+        intentos -= 1
+        print("❌ Incorrecto")
+
+        if intentos > 0:
+            print(f"Te quedan {intentos} intentos")
+        else:
+            print(f"💀 Perdiste. El número era {numero_secreto}")
